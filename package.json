@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "github-issues-to-versionone-sync",
+  "version": "1.0.0",
+  "description": "Synchronize GitHub issues with VersionOne assets to gain clarity within VersionOne for open source projects owned by organizations.",
+  "scripts": {
+    "build": "npm run build/server && npm run build/docker",
+    "build/docker": "./scripts/build-deployment-container",
+    "build/server": "babel src -d dist",
+    "start": "nodemon src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-codes/github-issues-to-versionone-sync.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew-codes/github-issues-to-versionone-sync/issues"
+  },
+  "homepage": "https://github.com/andrew-codes/github-issues-to-versionone-sync#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "concurrently": "^3.4.0",
+    "cross-env": "^4.0.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "github-webhook-middleware": "^0.0.2"
+  }
+}
